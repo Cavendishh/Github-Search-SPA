@@ -5,9 +5,10 @@ import Card from 'react-bootstrap/Card'
 const RepoItem = ({ repo }) => {
   return (
     <Card>
-      <h3>
+      <span style={{ fontSize: '1.75rem' }}>
         <a href={repo.html_url}>{repo.name}</a>
-      </h3>
+        <span style={{ fontSize: '0.9rem' }} className='text-muted'> Last updated on {repo.updated_at.substring(0,10)}</span>
+      </span>
     </Card>
   )
 }

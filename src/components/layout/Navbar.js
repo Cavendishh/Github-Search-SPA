@@ -17,7 +17,7 @@ const Navbar = ({ icon, title }) => {
       <NAVBAR.Collapse id='basic-navbar-nav'>
         <Nav className='mr-auto'>
           <Link to='/'>Home</Link>
-          <Link to='/about'>Link</Link>
+          <Link to='/about'>About</Link>
         </Nav>
       </NAVBAR.Collapse>
     </NAVBAR>

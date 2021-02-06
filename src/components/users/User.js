@@ -40,10 +40,7 @@ const User = ({  match }) => {
   return (
     <>
       <Link to='/'><Button variant='primary'>Back to results</Button></Link>
-      Hireable: {''}
-      {hireable ? <i className='fas fa-check text-success' /> : <i className='fas fa-times-circle text-danger' />}
-
-      <Row className='border'>
+      <Row>
         <Col md={6} >
           <Card className='text-center'>
             <div>
@@ -76,6 +73,8 @@ const User = ({  match }) => {
                 {login && (<li>Username: {login}</li>)}
                 {location && (<li>Location: {location}</li>)}
                 {blog && (<li>Website: {blog}</li>)}
+                Hireable: {''}
+                {hireable ? <i className='fas fa-check text-success' /> : <i className='fas fa-times-circle text-danger' />}
               </ul>
               
             </Card.Body>
@@ -83,11 +82,11 @@ const User = ({  match }) => {
         </Col>
       </Row>
       <Row>
-        <Col className='border text-center'>
-          <Badge variant='primary'>Followers: {followers}</Badge>
-          <Badge variant='secondary'>Following: {following}</Badge>
-          <Badge variant='success'>Public Repositories: {public_repos}</Badge>
-          <Badge variant='light'>Public Gists: {public_gists}</Badge>
+        <Col className='text-center'>
+          <Badge variant='light'>Followers: {followers}</Badge>
+          <Badge className='ml-3' variant='dark'>Following: {following}</Badge>
+          <Badge className='ml-3' variant='light'>Public Repositories: {public_repos}</Badge>
+          <Badge className='ml-3' variant='dark'>Public Gists: {public_gists}</Badge>
         </Col>
       </Row>
 
