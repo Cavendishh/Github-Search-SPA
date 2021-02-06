@@ -18,18 +18,16 @@ const App = () => {
     <GithubState>
       <AlertState>
         <Router>
-          <div className='App'>
-            <Navbar />
-            <Container>
-              <Alert alert={alert} />
-              <Switch>
-                <Route exact path='/' component={Home} />
-                <Route exact path='/about' component={About} />
-                <Route exact path='/user/:login' component={User} />
-                <Route component={NotFound} />
-              </Switch>
-            </Container>
-          </div>
+          <Navbar />
+          <Container>
+            <Alert alert={alert} />
+            <Switch>
+              <Route exact path='/' component={Home} />
+              <Route exact path='/about' component={About} />
+              <Route exact path='/user/:login' component={User} />
+              <Route component={NotFound} />
+            </Switch>
+          </Container>
         </Router>
       </AlertState>
     </GithubState>

@@ -11,7 +11,6 @@ const Users = () => {
   if (loading) {
     return <Spinner />
   }
-  console.log(users)
   return (
     <>
       {users.map(user => {
