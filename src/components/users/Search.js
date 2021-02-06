@@ -1,38 +1,31 @@
-import React, { Component } from 'react'
+import React, { useState, useContext } from 'react'
 import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
-import PropTypes from 'prop-types'
+import GithubContext from '../../context/github/githubContext'
+import AlertContext from '../../context/alert/alertContext'
 
-export class Search extends Component {
-  state = {
-    text: ''
-  }
+const Search = () => {
+  const githubContext = useContext(GithubContext)
+  const alertContext = useContext(AlertContext)
 
-  onChange = e => this.setState({ [e.target.name]: e.target.value })
-  onSubmit = e => {
+  const [text, setText] = useState('')
+
+  const onChange = e => setText(e.target.value)
+  
+  const onSubmit = e => {
     e.preventDefault()
-    if (this.state.text === '') {
-      return this.props.setAlert('Search field empty', 'danger')
+    if (text === '') {
+      return alertContext.setAlert('Search field empty', 'danger')
     }
-    this.props.searchUsers(this.state.text)
-    this.setState( { text: '' })
+    githubContext.searchUsers(text)
+    setText('')
   }
-
-  static propTypes = {
-    searchUsers: PropTypes.func.isRequired,
-    clearUsers: PropTypes.func.isRequired,
-    showClear: PropTypes.bool.isRequired,
-    setAlert: PropTypes.func.isRequired
-  }
-
-  render() {
-    const { showClear, clearUsers } = this.props
 
     return (
       <>
-        <Form onSubmit={this.onSubmit}>
+        <Form onSubmit={onSubmit}>
           <Form.Group as={Row} controlId='searchForm'>
             <Col sm={12}>
               <Form.Control
@@ -40,8 +33,8 @@ export class Search extends Component {
                 name='text'
                 placeholder='Search user(s)...' 
                 style={{ block: true }} 
-                value={this.state.text} 
-                onChange={this.onChange}
+                value={text} 
+                onChange={onChange}
               ></Form.Control>
             </Col>
             <Col sm={12} className='mt-2'>
@@ -49,10 +42,9 @@ export class Search extends Component {
             </Col>
           </Form.Group>
         </Form>
-        {showClear && <Button variant='danger' onClick={clearUsers} block>Clear</Button>}
+        {githubContext.users.length > 0 && <Button variant='danger' onClick={githubContext.clearUsers} block>Clear</Button>}
       </>
     )
   }
-}
 
 export default Search
