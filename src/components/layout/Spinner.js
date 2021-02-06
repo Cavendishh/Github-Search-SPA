@@ -1,9 +1,9 @@
 import React from 'react'
-import spinner from '../../assets/images/spinner.gif'
-import Image from 'react-bootstrap/Image'
+import SPINNER from 'react-bootstrap/Spinner'
 
-export const Spinner = () => <>
-  <Image src={spinner} alt='Loading API data' style={{ width: '175px', display: 'block', margin: 'auto'}} />
-</>
+export const Spinner = () =>
+<SPINNER animation="border" role="status" style={{ margin: 'auto' }} className='mt-5'>
+  <span className="sr-only">Loading...</span>
+</SPINNER>
 
 export default Spinner

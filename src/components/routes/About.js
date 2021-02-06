@@ -3,8 +3,9 @@ import React from 'react'
 const About = () => {
   return (
     <>
-      <h1>About this app</h1>
-      <p>App to search Github users</p>
+      <p>This is a small single page application to learn modern React using Context API and React bootstrap at the same time. Two birds with 
+        one stone - so to speak.
+      </p>
       <p>Version 1.0</p>
     </>
   )
