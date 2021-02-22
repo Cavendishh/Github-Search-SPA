@@ -4,12 +4,12 @@
 <p><strong>Project URL:</strong> https://secure-plateau-66948.herokuapp.com/</p>
 <p><strong>Summary:</strong>
   This project has been done in different ways. First I did this single page application using old ways of React - using class-based 
-  methods. Then I refactored the project to use React hooks. Due to prop drilling and App.js being very messy - I refactored the project for the third time. This 
+  methods. Then I refactored the project to use modern react and React hooks. Due to prop drilling and App.js being very messy - I refactored the project for the third time. This 
   time I used Context API to make the app structure much clearer.
 </p>
 <strong>Tools and technologies used:</strong>
 <ul>
-  <li>React v16.8+ w/ hooks</li>
+  <li>React</li>
   <li>React router</li>
   <li>Context API</li>
   <li>React Bootstrap</li>
